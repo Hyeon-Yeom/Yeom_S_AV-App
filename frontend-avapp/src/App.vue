@@ -1,30 +1,49 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div>
+    <h1 class="hidden">Application Project</h1>
+
+    <section class="container">
+      <!-- <p class="messages">Welcome! Discover Your Music Taste!</p> -->
+    </section>
+
+    <router-view></router-view>
+  </div>
 </template>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.hidden {
+  display: none;
+}
+
+div {
+  background-color: rgb(71, 42, 71);
+  width: 1280px;
+  height: 1080px;
+  margin: 0 auto;
+  color: white;
+}
+
+.container {
+  margin: 0 auto;
   text-align: center;
-  color: #2c3e50;
+  font-family: 'roboto';
 }
 
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
+.messages {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  font-size: 20px;
 }
 </style>
+
+<script>
+import Home from '@/views/Home.vue';
+
+export default {
+  name: 'App',
+
+  views: {
+    Home
+  }
+}
+</script>

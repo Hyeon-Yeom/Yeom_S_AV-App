@@ -15,10 +15,10 @@ module.exports = {
     "requireConfigFile": false,
     // parser: 'babel-eslint'
   },
-  // "babelOptions": { "configFile": "./.babelrc", },
+  "babelOptions": { "configFile": "./.babelrc", },
   rules: {
     'vue/multi-word-component-names': 'off',
-    "no-unused-vars": "warn",
+    "no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off'
   }
