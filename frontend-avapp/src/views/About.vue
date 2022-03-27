@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="mainContainer">
         <h1 class="hidden">This is home page</h1>
 
         <nav class="nav">

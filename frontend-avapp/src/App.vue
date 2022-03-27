@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mainContainer">
     <h1 class="hidden">Application Project</h1>
 
     <section class="container">
@@ -15,8 +15,8 @@
   display: none;
 }
 
-div {
-  background-color: rgb(71, 42, 71);
+.mainContainer {
+  background-color: rgb(89, 89, 128);
   width: 1280px;
   height: 1080px;
   margin: 0 auto;

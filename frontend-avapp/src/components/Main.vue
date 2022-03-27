@@ -1,5 +1,5 @@
 <template>
-    <div class="main-vue">
+    <div class="main-vue mainContainer">
         <h1>Welcome!</h1>
         <h2>Discover Your Music Taste!</h2>
 

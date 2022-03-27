@@ -1,16 +1,28 @@
 <template>
-  <div>
+  <div class="mainContainer">
     <h1 class="hidden">This is home page</h1>
 
     <nav class="nav">
       <button class="back-btn-custom" @click="Back">BACK</button>
     </nav>
 
-    <h2 class="container-title">Recently Watched</h2>
+    <div class="random-track" onclick="randomTrack()">
+                            <i class="fas fa-random fa-2x" title="random"></i>
+                        </div>
 
-    <h2 class="container-title">This Week's Biggest Hits</h2>
+    <!-- <div class="recentlyWatched">
+      <h2 class="container-title">Recently Watched</h2>
+    </div> -->
+
+    <div class="biggestHits">
+      <h2 class="container-title">This Week's Biggest Hits</h2>
+      <div class="biggestHits-img">
+        <img class="album-image" src="@/assets/images/album-cover-imagine-dragon.png" alt="">
+      </div>
+    </div>
 
     <h2 class="container-title"></h2>
+    
   </div>
 </template>
 
