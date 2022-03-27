@@ -1,0 +1,24 @@
+{
+  "name": "av-app",
+  "version": "1.0.0",
+  "description": "### Created By Seunghyeon Yeom (0975764)",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hyeon-Yeom/Yeom_S_AV-App.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hyeon-Yeom/Yeom_S_AV-App/issues"
+  },
+  "homepage": "https://github.com/Hyeon-Yeom/Yeom_S_AV-App#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
