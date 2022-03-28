@@ -1,5 +1,6 @@
 <template>
   <div class="mainContainer">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
     <h1 class="hidden">Application Project</h1>
     <router-view></router-view>
   </div>

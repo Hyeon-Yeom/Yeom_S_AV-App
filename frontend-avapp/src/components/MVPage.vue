@@ -15,7 +15,7 @@
                 </div>
             </div>
 
-            <div class="musicPlayer">
+            <!-- <div class="musicPlayer">
                 <div class="wrapper">
                     <div class="details">
                         <div class="now-playing">PLAYING</div>
@@ -69,7 +69,7 @@
                         <span class="stroke"></span>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </template>
@@ -115,7 +115,7 @@
         align-items: center;
     }
 
-    .wrapper {
+    /* .wrapper {
         margin-top: 10px;
         border: 1px solid transparent;
         box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px;
@@ -136,7 +136,6 @@
         background-size: cover;
         background-position: center;
         border-radius: 50%;
-        /* -moz-box-shadow: 0 4px 4px 5px #ccc; */
         -webkit-box-shadow: 0 4px 4px 3px #ccc;
         box-shadow: 0 6px 5px #ccc;
     }
@@ -156,14 +155,14 @@
         align-items: center;
         margin-bottom: 30px;
         opacity: 1;
-    }
+    } */
 
-    i {
+    /* i {
         font-size: 24px;
         display: block;
-    }
+    } */
 
-    .active {
+    /* .active {
         color: black;
     }
 
@@ -312,7 +311,7 @@
 
     .stroke:nth-child(7) {
         animation-delay: 0s;
-    }
+    } */
     
 </style>
 
