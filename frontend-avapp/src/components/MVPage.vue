@@ -325,5 +325,7 @@ export default {
         this.$router.push({ name: "Home" })
         }
     }
+
 }
+    
 </script>
