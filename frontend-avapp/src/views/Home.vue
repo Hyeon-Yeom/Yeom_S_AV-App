@@ -20,8 +20,21 @@
     <div class="musicContainers">
       <div class="biggestHits">
         <h2 class="container-title">This Week's Biggest Hits</h2>
+        <p class="imagineDragons">Imagine Dragons</p>
+        <div class="extraInfo">
+          <p class="genre"># Pop</p>
+          <p class="genre"># Rock</p>
+          <p class="genre"># Electropop Pop</p>
+          <p class="genre"># Indie Pop</p>
+          <p class="genre"># Arena Rock</p>
+          <p class="genre"># Alternative Rock</p>
+        </div>
         <div class="biggestHits-img">
-          <img class="album-image" src="@/assets/images/album-cover-imagine-dragon.png" alt="">
+          <img @click="watchMV" class="album-image" src="@/assets/images/album-cover-imagine-dragon.png" alt="">
+          <img class="album-image" src="@/assets/images/ImagineDragons-Mercury.jpg" alt="">
+          <img class="album-image" src="@/assets/images/ImagineDragons-NightVision.jpg" alt="">
+          <img class="album-image" src="@/assets/images/ImagineDragons-smokeMirrors.jpg" alt="">
+          <img class="album-image" src="@/assets/images/ImagineDragons-theFall.jpg" alt="">
         </div>
       </div>
 
@@ -139,6 +152,7 @@ div {
 }
 
 .biggestHits h2 {
+  width: 270px;
   margin-left: 1px;
   margin-top: 50px;
   margin-bottom: 30px;
@@ -150,6 +164,45 @@ div {
   padding: 10px 25px;
 }
 
+.imagineDragons {
+  width: 145px;
+  font-size: 15px;
+  font-weight: 400;
+  color: white;
+  padding: 5px 15px;
+  background: #4286f4;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.imagineDragons:hover {
+  background: #f4f8ff;
+  color: #4286f4;
+  transition: all ease-in .1s;
+}
+
+.extraInfo {
+  display: flex;
+  flex-direction: row;
+}
+
+.genre {
+  cursor: pointer;
+  font-weight: 400;
+  color:#4286f4;
+  padding: 5px 15px;
+  border-radius: 50px;
+  background: #f4f8ff;
+  margin-right: 10px;
+  margin-bottom: 30px;
+}
+
+.genre:hover {
+  background: #4286f4;
+  color: #f4f8ff;
+  transition: all ease-in .1s;
+}
+
 .biggestHits-img img {
   border-radius: 10px;
   width: 200px;
@@ -157,9 +210,26 @@ div {
 }
 
 .biggestHits-img img:hover {
-  filter: grayscale(50%);
+  /* filter: grayscale(50%); */
+  border-radius: 100px;
   box-shadow: rgb(161, 211, 255) 5px 5px 15px;
-  transition: all ease-in .2s;
+  transition: all ease-in .1s;
+  animation: rotating 5.5s infinite linear;
+}
+
+.album-image {
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .musicPlayer {
@@ -170,6 +240,7 @@ div {
 .wrapper {
   border-radius: 20px;
   width: 350px;
+  height: 450px;
   margin-top: 50px;
   border: 1px solid transparent;
   box-shadow: rgba(91, 159, 214, .2) 0px 19px 38px;
@@ -375,8 +446,12 @@ export default {
 
   methods: {
     Back() {
-        this.$router.push({ name: "Main" })
-        }
+      this.$router.push({ name: "Main" })
+      },
+
+    watchMV() {
+      this.$router.push({ name: "MVPage" })
+    }
   }
 }
 </script>

@@ -1,75 +1,38 @@
 <template>
     <div class="mainContainer">
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <h1 class="hidden">This is home page</h1>
+
         <nav class="nav">
-            <button class="back-btn-custom" @click="goBackToHome">BACK</button>
+            <i class="back-btn-custom glyphicon glyphicon-chevron-left" @click="Back"></i>
+            <!-- <i class="back-btn-custom fa fa-sign-out" @click="Back"></i> -->
+            <!-- <button class="back-btn-custom" @click="Back">Go Back</button> -->
+            <div class="appTitle">
+                <p>White Musix Box</p>
+            </div>
         </nav>
 
-        <div class="heading">
+        <div class="musicContainerHeading">
             <div class="musicContainer">
                 <img class="album-custom" src="@/assets/images/album-cover-imagine-dragon.png" alt="">
                 <div class="song-info">
                     <h1>Believer</h1>
-                    <h2>Song By Imagine Dragons <br>
-                    Pop-rock, Arena-rock</h2>
+                    <h2>From The Album Evolve</h2>
                 </div>
             </div>
 
-            <!-- <div class="musicPlayer">
-                <div class="wrapper">
-                    <div class="details">
-                        <div class="now-playing">PLAYING</div>
-                        <div class="track-art"></div>
-                        <div class="track-name">Track Name</div>
-                        <div class="track-artist">Track Artist</div>
-                    </div>
+            <div class="headingSongInfo">
+                <p class="singer songInfo"># Imagine Dragons</p>
+                <p class="songInfo"># Pop</p>
+                <p class="songInfo"># Arena Rock</p>
+            </div>
+        </div>
 
-                    <div class="slider-container">
-                        <div class="current-time">00:00</div>
-                        <input type="range" min="1" max="100" value="0" class="seek-slider" onchange="seekTo()">
-
-                        <div class="total-duration">00:00</div>
-                    </div>
-
-                    <div class="slider-container">
-                        <i class="fa fa-volume-down"></i>
-                        <input type="range" min="1" max="100" value="99" class="volume-slider" onchange="setVolume()">
-                        <i class="fa fa-volume-up"></i>
-                    </div>
-
-                    <div class="buttons">
-                        <div class="random-track" onclick="randomTrack()">
-                            <i class="fa fa-random fa-2x" title="random"></i>
-                        </div>
-
-                        <div class="prev-track" onclick="prevTrack()">
-                            <i class="fa fa-backward"></i>
-                        </div>
-
-                        <div class="playpause-track" onclick="playpauseTrack()">
-                            <i class="fa fa-pause"></i>
-                        </div>
-
-                        <div class="next-track" onclick="nextTrack()">
-                            <i class="fa fa-forward"></i>
-                        </div>
-
-                        <div class="repeat-track" onclick="repeatTrack()">
-                            <i class="fa fa-repeat fa-2x" title="repeat"></i>
-                        </div>
-                    </div>
-
-                    <div id="wave">
-                        <span class="stroke"></span>
-                        <span class="stroke"></span>
-                        <span class="stroke"></span>
-                        <span class="stroke"></span>
-                        <span class="stroke"></span>
-                        <span class="stroke"></span>
-                        <span class="stroke"></span>
-                    </div>
-                </div>
-            </div> -->
+        <div class="musicVideoBox">
+            <video class="musicVideo" src="@/assets/video/Imagine-Dragons-Believer.mp4"></video>
         </div>
     </div>
 </template>
@@ -87,25 +50,28 @@
         box-shadow: 0 6px 5px #ccc;
     }
 
-    .heading {
-        margin: 30px auto;
-    }
-
-    .musicContainer h1, div h2 {
-        font-weight: 300;
-        margin-left: 30px;
+    .musicContainerHeading {
+        margin: 150px auto 0 auto;
     }
 
     .musicContainer h1 {
+        font-weight: 300;
         font-size: 50px;
+        color: #4286f4;
         margin-bottom: 0px;
     }
 
     .musicContainer h2 {
-        opacity: 0.5;
+        opacity: 0.4;
+        font-weight: 400;
         font-size: 15px;
-        line-height: 20px;
+        line-height: 30px;
         letter-spacing: .5px;
+        color: #4286f4;
+    }
+
+    .musicContainer h1, .musicContainer h2 {
+        margin-left: 30px;
     }
 
     .musicContainer {
@@ -113,206 +79,42 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
+        margin: 0 auto;
     }
-
-    /* .wrapper {
-        margin-top: 10px;
-        border: 1px solid transparent;
-        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px;
-    }
-
-    .details {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .track-art {
-        margin: 25px;
-        height: 150px;
-        width: 150px;
-        border: 2px solid #fff;
-        background-size: cover;
-        background-position: center;
-        border-radius: 50%;
-        -webkit-box-shadow: 0 4px 4px 3px #ccc;
-        box-shadow: 0 6px 5px #ccc;
-    }
-
-    .now-playing {
-        font-size: 1.5rem;
-    }
-
-    .track-artist {
-        margin-top: 5px;
-        font-size: 1.5rem;
-    }
-
-    .buttons {
+    
+    .headingSongInfo {
+        margin-top: 50px;
+        margin-bottom: 0;
         display: flex;
         flex-direction: row;
-        align-items: center;
-        margin-bottom: 30px;
-        opacity: 1;
-    } */
-
-    /* i {
-        font-size: 24px;
-        display: block;
-    } */
-
-    /* .active {
-        color: black;
-    }
-
-    .repeat-track,
-    .random-track,
-    .playpause-track,
-    .prev-track,
-    .next-track {
-        padding: 25px;
-        opacity: 0.8;
-        transition: opacity .2s;
-    }
-
-    .repeat-track:hover,
-    .random-track:hover,
-    .playpause-track:hover,
-    .prev-track:hover,
-    .next-track:hover {
-        opacity: 1.0;
-    }
-
-    .slider-container {
-        display: flex;
         justify-content: center;
-        align-items: center;
     }
 
-    .seek-slider,
-    .volume-slider {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        height: 5px;
-        background: rgb(113, 220, 255);
-        -webkit-transition: .2s;
-        transition: opacity .2s;
-    }
-
-    .seek-slider::-webkit-slider-thumb,
-    .volume-slider::-webkit-slider-thumb {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        width: 15px;
-        height: 15px;
-        background: white;
-        border: 3px solid #3774ff;
+    .songInfo {
         cursor: pointer;
-        border-radius: 100%;
-    }
-
-    .seek-slider {
-        width: 60%;
-    }
-
-    .volume-slider {
-        width: 30%;
-    }
-
-    .current-time,
-    .total-duration {
-        padding: 10px;
-    }
-
-    i.fa-volume-down,
-    i.fa-volume-up {
-        padding: 10px;
-    }
-
-    i,
-    i.fa-play-circle,
-    i.fa-pause,
-    i.fa-forward,
-    i.fa-backward {
-        cursor: pointer;
-    }
-
-    .randomActive {
-        color: black;
-    }
-
-    .rotate {
-        animation: rotation 8s infinite linear;
-    }
-
-    @keyframes rotation {
-        from {
-            transform: rotate(0deg);
-        }
-
-        to {
-            transform: rotate(359deg);
-        }
-    }
-
-    .Loader {
-        height: 70px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .Loader .stroke {
-        background: #f1f1f1;
-        height: 150%;
-        width: 10px;
+        font-weight: 400;
+        color: #f4f8ff;
+        padding: 5px 15px;
         border-radius: 50px;
-        margin: 0 50px;
-        animation: animate 1.4s linear infinite;
+        background: #4286f4;
+        margin-right: 10px;
+        margin-bottom: 30px;
     }
 
-    @keyframes animate {
-        50% {
-            height: 20%;
-            background: #4286f4;
-        }
-
-        100% {
-            height: 100%;
-        }
+    .songInfo:hover {
+        background: #f4f8ff;
+        color: #4286f4;
+        transition: all ease-in .1s;
     }
 
-    .stroke:nth-child(1) {
-        animation-delay: 0s;
+    .musicVideo {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        width: 720px;
+        border-radius: 20px;
     }
 
-    .stroke:nth-child(2) {
-        animation-delay: 0.3s;
-    }
-
-    .stroke:nth-child(3) {
-        animation-delay: 0.6s;
-    }
-
-    .stroke:nth-child(4) {
-        animation-delay: 0.9s;
-    }
-
-    .stroke:nth-child(5) {
-        animation-delay: 0.6s;
-    }
-
-    .stroke:nth-child(6) {
-        animation-delay: 0.3s;
-    }
-
-    .stroke:nth-child(7) {
-        animation-delay: 0s;
-    } */
-    
 </style>
 
 <script>
