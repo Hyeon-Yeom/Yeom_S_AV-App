@@ -32,7 +32,46 @@
         </div>
 
         <div class="musicVideoBox">
-            <video class="musicVideo" src="@/assets/video/Imagine-Dragons-Believer.mp4"></video>
+            <video
+                id = "video"
+                class="musicVideo"
+                poster=""
+                src="@/assets/video/Imagine-Dragons-Believer.mp4">
+            </video>
+
+            <div class="controller">
+                <div class="controllerProgressBar">
+                    <div class="current-time">00:00</div>
+                    <input type="range" min="1" max="100" step="0.1" value="0" class="video-slider" onchange="seekTo()">
+                    <div class="total-duration">00:00</div>
+                </div>
+                
+                <div class="controllerBtns">
+                    <button class="random-track" onclick="randomTrack()">
+                        <i class="fa fa-random fa-2x" title="random" style="font-size: 20px"></i>
+                    </button>
+
+                    <button class="prev-track" onclick="prevTrack()">
+                        <i class="fa fa-backward" style="font-size: 20px"></i>
+                    </button>
+
+                    <button class="pause-track" onclick="pauseTrack()">
+                        <i class="fa fa-pause" style="font-size: 20px"></i>
+                    </button>
+
+                    <button class="next-track" onclick="nextTrack()">
+                        <i class="fa fa-forward" style="font-size: 20px"></i>
+                    </button>
+
+                    <button class="repeat-track" onclick="repeatTrack()">
+                        <i class="fa fa-repeat fa-2x" title="repeat" style="font-size: 20px"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="lyrics">
+                
+            </div>
         </div>
     </div>
 </template>
@@ -115,6 +154,45 @@
         border-radius: 20px;
     }
 
+    .controllerProgressBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 20px auto 0 auto;
+    width: 720px;
+    align-items: center;
+    cursor: pointer;
+}
+
+    .video-slider {
+        appearance: none;
+        border-radius: 50px;
+        height: 5px;
+        background: rgba(91, 159, 214, .3);
+        transition: opacity .2s;
+    }
+
+    .controllerBtns {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    .controllerBtns button {
+        background: none;
+        border: none;
+        margin-top: 1px;
+    }
+
+    .controllerBtns button i:hover {
+        color: #4286f4;
+        opacity: .7;
+        transition: all ease-in;
+    }
+
+    .btn:focus {
+        outline: 0;
+    }
 </style>
 
 <script>
@@ -125,8 +203,53 @@ export default {
         goBackToHome() {
         this.$router.push({ name: "Home" })
         }
-    }
+    },
 
+    mounted() {
+        const video = document.getElementById('video');
+        const prev_track = document.querySelector('.prev-track');
+        const pause_track = document.querySelector('.pause-track');
+        const next_track = document.querySelector('.next-track');
+        // const timeStamp = document.getElementByClass('total-duration');
+
+        function toggleVideoStatus() {
+            if(video.paused) {
+                video.play()
+            } else {
+                video.pause();
+            }
+        }
+
+        function updatePlayIcon() {
+            if(video.paused) {
+                pause_track.innerHTML = '<li class="fa fa-play"></li>'
+            } else {
+                pause_track.innerHTML = '<li class="fa fa-pause"></li>'
+            }
+        }
+
+        function updateProgress() {
+            return true;
+        }
+
+        function setVideoProgress() {
+            return true;
+        }
+
+        function stopVideo() {
+            return true;
+        }
+
+        video.addEventListener('click', toggleVideoStatus);
+        video.addEventListener('pause', updatePlayIcon);
+        video.addEventListener('play', updatePlayIcon);
+        video.addEventListener('timeupdate', updateProgress);
+
+        prev_track.addEventListener('click', toggleVideoStatus);
+        pause_track.addEventListener('click', stopVideo);
+
+        next_track.addEventListener('change', setVideoProgress);
+    }
 }
     
 </script>

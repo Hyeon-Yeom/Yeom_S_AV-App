@@ -444,6 +444,10 @@ i.fa-backward {
 export default {
   name: 'Home',
 
+  mounted() {
+    
+  },
+
   methods: {
     Back() {
       this.$router.push({ name: "Main" })
@@ -451,6 +455,12 @@ export default {
 
     watchMV() {
       this.$router.push({ name: "MVPage" })
+    }
+  },
+
+  data() {
+    return {
+        
     }
   }
 }

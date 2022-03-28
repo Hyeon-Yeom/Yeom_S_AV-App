@@ -4,12 +4,17 @@
 Seunghyeon Yeom (0975764)
 
 ## Application Type
-Educational Multimedia Application
+Music Video Multimedia Application
 
-## Application Content
-The content in the app, such as videos, is based on TED ED.
+: This is the application for the music video. Currently, there are only the singer Imagine Dragons' music videos and audios.
 
 ## User Experience (UX)
+1. Controller
+: Customized the controller on the music video page
+
+2. Small Music Player
+: Created the small music player on the home page, which the users can look for and pick musics.
+: The controller is customized as well.
 
 ## Software
 Npm (Node, Express, Axios)
