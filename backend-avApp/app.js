@@ -17,6 +17,10 @@ const port = process.env.PORT || 3000 ;
 //     console.log(`server is running on ${port}`);
 // })
 
-httpServer.listen(port, () => {
+// httpServer.listen(port, () => {
+//     console.log("server listening to port " + port);
+// })
+
+httpServer.listen(process.env.PORT || 3000, function() {
     console.log("server listening to port " + port);
-})
+});
