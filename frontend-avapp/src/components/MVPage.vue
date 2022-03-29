@@ -7,7 +7,7 @@
         <h1 class="hidden">This is home page</h1>
 
         <nav class="nav">
-            <i class="back-btn-custom glyphicon glyphicon-chevron-left" @click="Back"></i>
+            <i class="back-btn-custom glyphicon glyphicon-chevron-left" @click="goBackToHome"></i>
             <!-- <i class="back-btn-custom fa fa-sign-out" @click="Back"></i> -->
             <!-- <button class="back-btn-custom" @click="Back">Go Back</button> -->
             <div class="appTitle">
@@ -70,7 +70,7 @@
             </div>
 
             <div class="lyrics">
-                
+
             </div>
         </div>
     </div>
