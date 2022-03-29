@@ -2,9 +2,12 @@
   "name": "av-app",
   "version": "1.0.0",
   "description": "### Created By Seunghyeon Yeom (0975764)",
+  "engines": {
+    "node": "14.17.6"
+    },
   "main": "index.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
