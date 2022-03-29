@@ -8,6 +8,10 @@ Music Video Multimedia Application
 
 : This is the application for the music video. Currently, there are only the singer Imagine Dragons' music videos and audios.
 
+## Software
+Npm (Node, Express, Axios, Vue)
+Git
+
 ## User Experience (UX)
 1. Controller
 : Customized the controller on the music video page
@@ -15,10 +19,6 @@ Music Video Multimedia Application
 2. Small Music Player
 : Created the small music player on the home page, which the users can look for and pick musics.
 : The controller is customized as well.
-
-## Software
-Npm (Node, Express, Axios)
-Git
 
 ### MIT License
 Copyright 2022 Seunghyeon Yeom
